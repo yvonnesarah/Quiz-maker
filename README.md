@@ -26,6 +26,16 @@ Provide a short description explaining the what, why, and how of your project. U
 - What problem does it solve?
 - What did you learn?
 
+#### User Personas
+<p align="center">
+  <img src="./assets/README_images/user-personas.png" width="500" title="User Personas" alt="User Personas">
+</p>
+
+#### User Story
+<p align="center">
+  <img src="./assets/README_images/user-story.png" width="500" title="User Story" alt="User Story">
+</p>
+
 ## Installation
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
