@@ -1,0 +1,15 @@
+.jumbotron{
+background-color: lightgreen;
+position: relative;
+
+display: flex;
+align-items: center;
+}
+
+.jumbotron p{
+    font-size: 18pt;
+    border: black 2px;
+    padding: 5px;
+    text-align: center;
+}
+
