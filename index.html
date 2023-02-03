@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Question Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="jumbotron">    
-        <center><h3 class="">Multi-Language Question Generator</h3></center>
+        <center><h2 class="">Multi-Language Question Generator</h2></center>
         <br></br>
-   <center><p> Set your criteria below and click "Generate questions". Sit back, relax and get up to four technical quiz questions as needed.</p></center>
+<!--<div class="container-jumbotron> -->
+ <p><span class="border border-dark">Set your criteria below and click "Generate questions". Sit back, relax and get up to four technical quiz questions as needed.</p></span>
+   <!--</div>-->
    </div>
+
+   <div class="container-category>
+    <div class="row">
        <div id = "Category">  
         <h3>Category</h3>
         <select name="Category" id="Category">
@@ -22,9 +27,12 @@
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
           </select>
-          <br><br>
-        
+          <br><br> 
     </div>
+</row>
+</div>
+
+<div class="container-language>
     <div id = "Language">  
         <h3>Language</h3>
         <select name="Language" id="Language">
@@ -36,6 +44,8 @@
           <br><br>
          
     </div>
+</div>
+<div class="container-numbers>
     <div id = "Number_of_Questions">  
         <h3>Number of Questions</h3>
         <select name="Number_of_Questions" id="Number_of_Questions">
@@ -47,11 +57,12 @@
           <br><br>
           
     </div>
+</div>
    
-    <button type="button">Generate Question</button>
+    <button type="button" id="generate">Generate Question</button>
        
-    <script src="../assets/js/keys.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <script src="./assets/js/keys.js"></script>
+    <script src="./assets/js/script.js"></script>
      <!-- Popper JS -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
