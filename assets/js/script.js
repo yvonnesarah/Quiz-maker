@@ -2,18 +2,16 @@
 var quizApiURL = "https://quizapi.io/";
 var generateQuestionsButton = document.querySelector("#Generate");
 var chosenOptions = [];
-// var categoryChosen = document.getElementById('Category'); 
-// var languageChosen = "";
-// var quantityChosen = "";
+var categoryChosen = "";
+var languageChosen = "";
+var quantityChosen = "";
 var questionGenerated = [];
 
 
 // When user clicks the 'Generate Questions' button, call the first API
 generateQuestionsButton.addEventListener("click", function(event) {
     
-    // categoryChosen = document.querySelector("#Category").value; 
-    // languageChosen = document.querySelector("#Language").value; 
-    // quantityChosen = document.querySelector("#Number_of_Questions").value;
+    // Collecting selected items from multiple dropdown lists 
     var allDropdowns = document.getElementsByTagName('SELECT');
     for(i = 0; i < allDropdowns.length; i++) {
         var dropdownList = allDropdowns[i];
@@ -25,11 +23,16 @@ generateQuestionsButton.addEventListener("click", function(event) {
         }
         chosenOptions.push(temporaryHolder);
     }
-    console.log(JSON.stringify(chosenOptions));
+    console.log(JSON.stringify(chosenOptions)); 
     // produces a JSON holding all the user's chosen options
 
+    categoryChosen = chosenOptions[0];
+    languageChosen = chosenOptions[1];
+    quantityChosen = chosenOptions[2];
     // maybe add a line to clear chosenOptions after the result is sent off
-    // getQuizQuestion(categoryChosen, quantityChosen);
+
+    getQuizQuestion(categoryChosen, quantityChosen);
+
 
 });
 
@@ -38,22 +41,24 @@ generateQuestionsButton.addEventListener("click", function(event) {
 // function to fetch quiz questions from the Quiz API
 function getQuizQuestion(category, quantity) {
     
-    var fetchURL = `${quizApiURL}/api/v1/questions?apiKey=${quizApiKey}&category=${category}&difficulty=Easy&limit=${quantity}`; // we may later also allow user choose difficulty
+    var fetchURL = `${quizApiURL}/api/v1/questions?apiKey=${quizApiKey}&category=${category}&difficulty=Easy&limit=${quantity}`; 
+    // we may later also allow user choose difficulty
     fetch(fetchURL)
     .then(function(response){
-        return response.json();
+        var questionsGotten = response
+        console.log(questionsGotten.json());
     })
-    .then(function(questionGotten){
-        if (!questionGotten[0]){
-            // alert incase the APi fails
-            alert("The API returned nothing bro"); // change this later to be more user friendly or take it out
-        } else {
-            // break apart the json and assign to variables
-            // populate the questionGenerated array
-            // push the questionText and answerText variables to the translator API
+    // .then(function(questionGotten){
+    //     if (!questionGotten[0]){
+    //         // alert incase the APi fails
+    //         alert("The API returned nothing bro"); // change this later to be more user friendly or take it out
+    //     } else {
+    //         // break apart the json and assign to variables
+    //         // populate the questionGenerated array
+    //         // push the questionText and answerText variables to the translator API
         
-        };
-    })
+    //     };
+    // })
     // .then translateQuestion(languageChosen, questionText, answerText)
     .catch(function(error){
         console.error(error);
