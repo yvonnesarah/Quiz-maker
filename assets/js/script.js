@@ -5,7 +5,12 @@ var chosenOptions = [];
 var categoryChosen = "";
 var languageChosen = "";
 var quantityChosen = "";
-var questionGenerated = [];
+var questionsGotten;
+// var questionText;
+// var answerAText;
+// var answerBText;
+// var answerCText;
+// var answerDText;
 
 
 // When user clicks the 'Generate Questions' button, call the first API
@@ -26,12 +31,12 @@ generateQuestionsButton.addEventListener("click", function(event) {
     console.log(JSON.stringify(chosenOptions)); 
     // produces a JSON holding all the user's chosen options
 
-    categoryChosen = chosenOptions[0];
-    languageChosen = chosenOptions[1];
-    quantityChosen = chosenOptions[2];
-    // maybe add a line to clear chosenOptions after the result is sent off
+    categoryChosen = chosenOptions[0][0];
+    languageChosen = chosenOptions[1][0];
+    quantityChosen = chosenOptions[2][0];
 
-    getQuizQuestion(categoryChosen, quantityChosen);
+    getQuizQuestions(categoryChosen, quantityChosen);
+    // maybe add a line to clear chosenOptions after the result is sent off
 
 
 });
@@ -39,27 +44,34 @@ generateQuestionsButton.addEventListener("click", function(event) {
 
 
 // function to fetch quiz questions from the Quiz API
-function getQuizQuestion(category, quantity) {
+function getQuizQuestions(category, quantity) {
     
     var fetchURL = `${quizApiURL}/api/v1/questions?apiKey=${quizApiKey}&category=${category}&difficulty=Easy&limit=${quantity}`; 
     // we may later also allow user choose difficulty
     fetch(fetchURL)
-    .then(function(response){
-        var questionsGotten = response
-        console.log(questionsGotten.json());
+    .then((response) => response.json())
+    .then(function(data){
+        questionsGotten = data;
+        console.log(questionsGotten);
     })
-    // .then(function(questionGotten){
-    //     if (!questionGotten[0]){
-    //         // alert incase the APi fails
-    //         alert("The API returned nothing bro"); // change this later to be more user friendly or take it out
-    //     } else {
-    //         // break apart the json and assign to variables
-    //         // populate the questionGenerated array
-    //         // push the questionText and answerText variables to the translator API
-        
-    //     };
-    // })
-    // .then translateQuestion(languageChosen, questionText, answerText)
+    .then(function(){
+        // For each question gotten, go into the array to find text for questions and answers, then assign them to variables
+        for (i = 0; i < questionsGotten.length; i++) {
+            var questionText = questionsGotten[i]['question'];
+            var answerAText = questionsGotten[i]['answers']['answer_a'];
+            var answerBText = questionsGotten[i]['answers']['answer_b'];
+            var answerCText = questionsGotten[i]['answers']['answer_c'];
+            var answerDText = questionsGotten[i]['answers']['answer_d'];
+            console.log(questionText);
+            console.log(answerAText);
+            console.log(answerBText);
+            console.log(answerCText);
+            console.log(answerDText);
+
+            // push the questionText and answerText variables to the translator API
+        }
+    })
+    // .then translateQuestions(languageChosen, questionText, answerText)
     .catch(function(error){
         console.error(error);
     })
@@ -69,35 +81,33 @@ function getQuizQuestion(category, quantity) {
 
 
 // function that takes the quiz question generated from QuizAPI and passes it to the Translator API
-function translateQuestion(language, questionText, answerText){
-    // var fetchURL = ????
-    // fetch(fetchURL)
-    // .then(function(response){
-    //     translatedQuestion = ????
-    //     translatedAnswers = ????
-    // })
+function translateQuestions(){
 
-// write if statments to convert language to code
+    // Don't bother translating if the user selects english
+    if (languageChosen === "en"){
+        console.log("Language is english so i cant translate"); // change this to continue without running the translator API
+    } else {
+        // if user selected any language other than english, push parameters through the API
+        const encodedParams = new URLSearchParams();
+        encodedParams.append("source_language", "en");
+        encodedParams.append("target_language", languageChosen);
+        encodedParams.append("text", "I am an honest man"); // this should take in questions and/or answer text
 
-    const encodedParams = new URLSearchParams();
-    encodedParams.append("source_language", "en");
-    encodedParams.append("target_language", "id");
-    encodedParams.append("text", "What is your name?");
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'X-RapidAPI-Key': translatorApiKey,
+                'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+            },
+            body: encodedParams
+        };
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': translatorApiKey,
-            'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
-        },
-        body: encodedParams
-};
-
-    fetch('https://text-translator2.p.rapidapi.com/translate', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        fetch('https://text-translator2.p.rapidapi.com/translate', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+    }
     // Then take what was outputted and populate the questionGenerated array, replacing existing elements of the object
     // Then save the result to local storage
 };
