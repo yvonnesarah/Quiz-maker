@@ -57,16 +57,15 @@ function getQuizQuestions(category, quantity) {
     .then(function(){
         // For each question gotten, go into the array to find text for questions and answers, then assign them to variables
         for (i = 0; i < questionsGotten.length; i++) {
+            var questionArray = [];
             var questionText = questionsGotten[i]['question'];
             var answerAText = questionsGotten[i]['answers']['answer_a'];
             var answerBText = questionsGotten[i]['answers']['answer_b'];
             var answerCText = questionsGotten[i]['answers']['answer_c'];
             var answerDText = questionsGotten[i]['answers']['answer_d'];
-            console.log(questionText);
-            console.log(answerAText);
-            console.log(answerBText);
-            console.log(answerCText);
-            console.log(answerDText);
+            questionArray.push(questionText, answerAText, answerBText, answerCText, answerDText);
+            questionArrayStringified = questionArray.toString()
+            console.log(questionArrayStringified);
 
             // push the questionText and answerText variables to the translator API
         }
