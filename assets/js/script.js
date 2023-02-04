@@ -68,9 +68,9 @@ function getQuizQuestions(category, quantity) {
             console.log(questionArrayStringified);
 
             // push the questionText and answerText variables to the translator API
+            // .then translateQuestions(languageChosen, questionArrayStringified)
         }
     })
-    // .then translateQuestions(languageChosen, questionText, answerText)
     .catch(function(error){
         console.error(error);
     })
@@ -80,17 +80,17 @@ function getQuizQuestions(category, quantity) {
 
 
 // function that takes the quiz question generated from QuizAPI and passes it to the Translator API
-function translateQuestions(){
+function translateQuestions(language,text){
 
     // Don't bother translating if the user selects english
-    if (languageChosen === "en"){
+    if (language === "en"){
         console.log("Language is english so i cant translate"); // change this to continue without running the translator API
     } else {
         // if user selected any language other than english, push parameters through the API
         const encodedParams = new URLSearchParams();
         encodedParams.append("source_language", "en");
-        encodedParams.append("target_language", languageChosen);
-        encodedParams.append("text", "I am an honest man"); // this should take in questions and/or answer text
+        encodedParams.append("target_language", language);
+        encodedParams.append("text", text); // this should take in questions and answer string
 
         const options = {
             method: 'POST',
