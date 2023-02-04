@@ -1,19 +1,35 @@
-// Declaring variables for use in the global scope
+// Declaring variables and HTML DOM elements for use in the global scope
 var quizApiURL = "https://quizapi.io/";
-var categoryChosen = "";
-var languageChosen = "";
-var quantityChosen = "";
+var generateQuestionsButton = document.querySelector("#Generate");
+var chosenOptions = [];
+// var categoryChosen = document.getElementById('Category'); 
+// var languageChosen = "";
+// var quantityChosen = "";
 var questionGenerated = [];
 
 
 // When user clicks the 'Generate Questions' button, call the first API
-generateQuestionsButton.addEventListener("click", function() {
+generateQuestionsButton.addEventListener("click", function(event) {
     
-    event.preventDefault(); // why is event crossed off? Does it matter?
-    categoryChosen = document.querySelector("#???????").value; // whatever is selected on category dropdown 
-    languageChosen = document.querySelector("#???????").value; // whatever is selected on language dropdown
-    quantityChosen = document.querySelector("#???????").value; // whatever is selected on number of questions dropdown
-    getQuizQuestion(categoryChosen, quantityChosen);
+    // categoryChosen = document.querySelector("#Category").value; 
+    // languageChosen = document.querySelector("#Language").value; 
+    // quantityChosen = document.querySelector("#Number_of_Questions").value;
+    var allDropdowns = document.getElementsByTagName('SELECT');
+    for(i = 0; i < allDropdowns.length; i++) {
+        var dropdownList = allDropdowns[i];
+        var temporaryHolder = [];
+        for(j = 0; j < dropdownList.length; j++) {
+          if(dropdownList[j].selected){
+            temporaryHolder.push(dropdownList[j].value);
+        };  
+        }
+        chosenOptions.push(temporaryHolder);
+    }
+    console.log(JSON.stringify(chosenOptions));
+    // produces a JSON holding all the user's chosen options
+
+    // maybe add a line to clear chosenOptions after the result is sent off
+    // getQuizQuestion(categoryChosen, quantityChosen);
 
 });
 
@@ -55,12 +71,34 @@ function translateQuestion(language, questionText, answerText){
     //     translatedQuestion = ????
     //     translatedAnswers = ????
     // })
+
+// write if statments to convert language to code
+
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("source_language", "en");
+    encodedParams.append("target_language", "id");
+    encodedParams.append("text", "What is your name?");
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': translatorApiKey,
+            'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+        },
+        body: encodedParams
+};
+
+    fetch('https://text-translator2.p.rapidapi.com/translate', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
     // Then take what was outputted and populate the questionGenerated array, replacing existing elements of the object
-    // Then run the displayResult function
+    // Then save the result to local storage
 };
 
 
-// function that takes the questionGenerated (after it's been populated by previous functions) and displays it to the user
+// function that reads the questionGenerated from local storage (after it's been populated by previous functions) and displays it to the user
 function displayResult(){
     // use HTML dom manipulation to display results by picking different elements from the questionGenerated array 
 };
