@@ -6,11 +6,6 @@ var categoryChosen = "";
 var languageChosen = "";
 var quantityChosen = "";
 var questionsGotten;
-// var questionText;
-// var answerAText;
-// var answerBText;
-// var answerCText;
-// var answerDText;
 
 
 // When user clicks the 'Generate Questions' button, call the first API
@@ -38,7 +33,6 @@ generateQuestionsButton.addEventListener("click", function(event) {
     getQuizQuestions(categoryChosen, quantityChosen);
     // maybe add a line to clear chosenOptions after the result is sent off
 
-
 });
 
 
@@ -64,11 +58,11 @@ function getQuizQuestions(category, quantity) {
             var answerCText = questionsGotten[i]['answers']['answer_c'];
             var answerDText = questionsGotten[i]['answers']['answer_d'];
             questionArray.push(questionText, answerAText, answerBText, answerCText, answerDText);
-            questionArrayStringified = questionArray.toString()
+            questionArrayStringified = questionArray.toString();
             console.log(questionArrayStringified);
 
             // push the questionText and answerText variables to the translator API
-            // .then translateQuestions(languageChosen, questionArrayStringified)
+            translateQuestions(languageChosen, questionArrayStringified);
         }
     })
     .catch(function(error){
@@ -103,8 +97,12 @@ function translateQuestions(language,text){
         };
 
         fetch('https://text-translator2.p.rapidapi.com/translate', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
+            .then((response) => response.json())
+            .then(function(data){
+                translatedQuestion = data;
+                console.log(translatedQuestion);
+            })
+            // .then(response => console.log(response))
             .catch(err => console.error(err));
     }
     // Then take what was outputted and populate the questionGenerated array, replacing existing elements of the object
