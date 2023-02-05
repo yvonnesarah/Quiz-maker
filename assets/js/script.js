@@ -114,8 +114,7 @@ function translateQuestions(language,text){
     }
 };
 
+// figure out how to make it save on a new line in local storage
+// figure out how to  indicate which is the correct answer among the options
 
-// function that reads the questionGenerated from local storage (after it's been populated by previous functions) and displays it to the user
-function displayResult(){
-    // use HTML dom manipulation to display results by picking different elements from the questionGenerated array 
-};
+
