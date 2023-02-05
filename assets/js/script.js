@@ -6,6 +6,7 @@ var categoryChosen = "";
 var languageChosen = "";
 var quantityChosen = "";
 var questionsGotten;
+var translatedQuestion;
 
 
 // When user clicks the 'Generate Questions' button, call the first API
@@ -80,11 +81,11 @@ function translateQuestions(language,text){
     if (language === "en"){
         console.log("Language is english so i cant translate"); // change this to continue without running the translator API
     } else {
-        // if user selected any language other than english, push parameters through the API
+        // if user selected any language other than english, push langaugaeChosen and questionText as arguments through the API
         const encodedParams = new URLSearchParams();
         encodedParams.append("source_language", "en");
         encodedParams.append("target_language", language);
-        encodedParams.append("text", text); // this should take in questions and answer string
+        encodedParams.append("text", text);
 
         const options = {
             method: 'POST',
@@ -102,11 +103,15 @@ function translateQuestions(language,text){
                 translatedQuestion = data;
                 console.log(translatedQuestion);
             })
-            // .then(response => console.log(response))
+            // then pick out the part of the result you need and 
+            .then(function(){
+                var questionAndAnswers = translatedQuestion.data.translatedText;
+                console.log(questionAndAnswers);
+                // save to local storage
+                localStorage.setItem("questionAndAnswers", questionAndAnswers);
+            })
             .catch(err => console.error(err));
     }
-    // Then take what was outputted and populate the questionGenerated array, replacing existing elements of the object
-    // Then save the result to local storage
 };
 
 
