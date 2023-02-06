@@ -136,7 +136,7 @@ function translateQuestions(language,text){
 };
 
 // figure out a way to clear local storage 
-// figure out how to  indicate which is the correct answer among the options
+// future: figure out how to indicate which is the correct answer among the options
 // future: look at the possibility of handling a question with commas
 // future: more topics, higher quantity of arrays
 // future: change difficulty between easy, medium and hard
