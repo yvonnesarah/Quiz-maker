@@ -7,6 +7,8 @@ var languageChosen = "";
 var quantityChosen = "";
 var questionsGotten;
 var translatedQuestion;
+var questionsAndAnswersArray;
+var newQuestionAndAnswersArray;
 
 
 // When user clicks the 'Generate Questions' button, call the first API
@@ -105,16 +107,37 @@ function translateQuestions(language,text){
             })
             // then pick out the part of the result you need and 
             .then(function(){
-                var questionAndAnswers = translatedQuestion.data.translatedText;
-                console.log(questionAndAnswers);
-                // save to local storage
-                localStorage.setItem("questionAndAnswers", questionAndAnswers);
+                var newQuestionAndAnswers = translatedQuestion.data.translatedText;
+                newQuestionAndAnswersArray = newQuestionAndAnswers.split(",");
+                console.log(newQuestionAndAnswersArray);
             })
+            // then save everything to local storage
+            .then(function(){
+                // declaring a variable to hold a string of all previous questions
+                var oldQuestions = localStorage.getItem("questionsAndAnswersString");
+
+                // if there were no previous questions, create a new array, but if there are, capture them into an array
+                if (oldQuestions === null) {
+                    questionsAndAnswersArray = [];
+                } else {
+                    questionsAndAnswersArray = JSON.parse(oldQuestions);
+                };
+
+                // add this new questions and answers set to the existing array from previous questions
+                questionsAndAnswersArray.push(newQuestionAndAnswersArray);
+
+                // write the full record to local storage
+                localStorage.setItem("questionsAndAnswersString", JSON.stringify(questionsAndAnswersArray));
+
+            })
+            // then take the user to the results page
             .catch(err => console.error(err));
     }
 };
 
-// figure out how to make it save on a new line in local storage
+// figure out a way to clear local storage 
 // figure out how to  indicate which is the correct answer among the options
-
+// future: look at the possibility of handling a question with commas
+// future: more topics, higher quantity of arrays
+// future: change difficulty between easy, medium and hard
 
