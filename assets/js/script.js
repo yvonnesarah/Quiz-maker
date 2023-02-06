@@ -13,6 +13,11 @@ var newQuestionAndAnswersArray;
 
 // When user clicks the 'Generate Questions' button, call the first API
 generateQuestionsButton.addEventListener("click", function(event) {
+
+    //clear previous results from local storage first
+    // fetch scores from local storage
+    var questionsAndAnswersString = localStorage.getItem("questionsAndAnswersString");
+    clearStorage(questionsAndAnswersString);
     
     // Collecting selected items from multiple dropdown lists 
     var allDropdowns = document.getElementsByTagName('SELECT');
@@ -131,11 +136,28 @@ function translateQuestions(language,text){
 
             })
             // then take the user to the results page
+            .then(function(){
+                window.location.href = "./results.html";
+            })
             .catch(err => console.error(err));
     }
 };
 
-// figure out a way to clear local storage 
+// function thaty clears old results from local storage
+function clearStorage(recordToClear) {
+    localStorage.clear(recordToClear);
+}
+
+// TO DOS IN ORDER OF PRIORITY
+// =============================================================
+// fix up the CSS
+// make the copy buttons work
+// populate the filter container on the results page with whateever the user selected
+// if the user selects english, make it only skip the translator API, but do everything else
+// clean up code, make comments more relevant
+
+// FUTURE CONSIDERATIONS
+// =============================================================
 // future: figure out how to indicate which is the correct answer among the options
 // future: look at the possibility of handling a question with commas
 // future: more topics, higher quantity of arrays

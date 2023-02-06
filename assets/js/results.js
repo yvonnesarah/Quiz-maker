@@ -29,24 +29,13 @@ function displayResults(){
             var questionInResults = document.createElement("h4");
             questionInResults.textContent = questionsAndAnswersArray[i][0];
             resultsContainer.appendChild(questionInResults);
-            var thisQuestion = questionsAndAnswersArray[i];
+            thisQuestion = questionsAndAnswersArray[i];
 
-            for (j = 1; j < (thisQuestion[j].length - 1); j++) {
+            for (j = 1; j < (thisQuestion.length); j++) {
                 var optionInResults = document.createElement("li");
                 optionInResults.textContent = thisQuestion[j];
                 resultsContainer.appendChild(optionInResults);
             }
-
-            // var option1InResults = document.createElement("li");
-            // var option2InResults = document.createElement("li");
-            // var option3InResults = document.createElement("li");
-            // var option4InResults = document.createElement("li");
-            // option1InResults.textContent = questionsAndAnswersArray[i][1];
-            // option2InResults.textContent = questionsAndAnswersArray[i][2];
-            // option3InResults.textContent = questionsAndAnswersArray[i][3];
-            // option4InResults.textContent = questionsAndAnswersArray[i][4];
-            // resultsContainer.appendChild(questionInResults);
-            // resultsContainer.appendChild(option1InResults);
 
         };
     };
