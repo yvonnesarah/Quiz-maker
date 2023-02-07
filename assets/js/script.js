@@ -12,11 +12,14 @@ var translatedQuestion;
 var questionsAndAnswersArray;
 var newQuestionAndAnswersArray;
 
-// insert onclick method to trigger modal
-
-    $(window).on('load', function() {
-        $('#Modal').modal('show');
-    });
+// trigger modal to show only once on initial page
+$(document).ready(function() {
+    if(sessionStorage.getItem('#Modal')!=='true')
+	{
+		$('#Modal').modal('show');
+		sessionStorage.setItem('#Modal',true);
+	}
+});
 
 
 // MAIN 'QUESTION GENERATOR' LOGIC STARTS HERE
