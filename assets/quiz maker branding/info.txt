@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: syncopate-regular
+font link: https://www.fontsquirrel.com/fonts/syncopate
+font author: Astigmatic
+font author site: http://www.astigmatic.com/
+
+
+icon designer: Alfredo @ IconsAlfredo.us
+icon designer link: /AlfredoCreates
+        
+{"bg":"#5E3FA2","icon":"#5183C0","font":"#FFFFFF","slogan":"#ffffff"}
+      

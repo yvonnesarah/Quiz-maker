@@ -151,7 +151,7 @@ function clearStorage(recordToClear) {
 // TO DOS IN ORDER OF PRIORITY
 // =============================================================
 // fix up the CSS so it all looks great!
-// make it responsive
+// CSS - make it responsive
 // Fix timeout isue (async/await)
 // make the copy buttons work?
 // populate the filter container on the results page with whateever the user selected
@@ -164,6 +164,7 @@ function clearStorage(recordToClear) {
 // In Rubric: Make the Readme better
 // In Rubric: clean up code, make comments more relevant and structured
 // In Rubric: Powerpoint presentation
+// In Rubric: get Martin more pushes
 
 // FUTURE CONSIDERATIONS
 // =============================================================
