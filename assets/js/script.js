@@ -150,16 +150,24 @@ function clearStorage(recordToClear) {
 
 // TO DOS IN ORDER OF PRIORITY
 // =============================================================
-// fix up the CSS
-// make the copy buttons work
+// fix up the CSS so it all looks great!
+// make it responsive
+// Fix timeout isue (async/await)
+// make the copy buttons work?
 // populate the filter container on the results page with whateever the user selected
 // if the user selects english, make it only skip the translator API, but do everything else
-// clean up code, make comments more relevant
+// clean up code, make comments more relevant and structured
+// In Rubric: Better user experience (introducde a loading wheel to wait for questions to bee generated)
+// In Rubric: Better user expoerience (add an intro modal)
+// In Rubric: Deploy to github pages
+// In Rubric: Give repo a unique name
+// In Rubric: Make the Readme better
+// In Rubric: clean up code, make comments more relevant and structured
+// In Rubric: Powerpoint presentation
 
 // FUTURE CONSIDERATIONS
 // =============================================================
 // future: figure out how to indicate which is the correct answer among the options
 // future: look at the possibility of handling a question with commas
 // future: more topics, higher quantity of arrays
-// future: change difficulty between easy, medium and hard
-
+// future: make the "generate questions" button change plurality if the user is about to select more than one question
