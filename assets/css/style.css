@@ -1,5 +1,5 @@
 .jumbotron{
-background-color: lightgreen;
+background-color: #5E3FA2;
 /*position: relative;*/
 /*justify-content: ; */
 
@@ -17,6 +17,9 @@ text-align: center;
     text-align: center;
 }
 
+.container{
+height: 500px;
+}
 /*.container{
 width: 700px;
 margin-right: auto;
@@ -30,7 +33,24 @@ height: 80px;
 
 .row button  {
     border-radius: 10px;
-    background-color: blue;
+    background-color: #5E3FA2;
     color: white;
+    }
+    
+
+/******************************************
+/Media Query  - responsive
+/*******************************************/
+
+@media only screen and (max-width: 1000px) {
+
+    .contact-info{
+      flex-direction: column;
+    }
+    .contact-card{
+    width: 100%;
+    max-width: 400px;
+    margin: 40px 0;
+    }
     }
     
