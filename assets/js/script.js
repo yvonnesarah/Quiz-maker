@@ -1,4 +1,6 @@
-// Declaring variables and HTML DOM elements for use in the global scope
+// DECLARING VARIABLES & DOM ELEMENTS FOR USE IN THE GLOBAL SCOPE
+// ===========================================================================
+
 var quizApiURL = "https://quizapi.io/";
 var generateQuestionsButton = document.querySelector("#Generate");
 var chosenOptions = [];
@@ -10,6 +12,10 @@ var translatedQuestion;
 var questionsAndAnswersArray;
 var newQuestionAndAnswersArray;
 
+
+
+// MAIN 'QUESTION GENERATOR' LOGIC STARTS HERE
+// ===========================================================================
 
 // When user clicks the 'Generate Questions' button, call the first API
 generateQuestionsButton.addEventListener("click", function(event) {
@@ -143,7 +149,12 @@ function translateQuestions(language,text){
     }
 };
 
-// function thaty clears old results from local storage
+
+
+// OTHER FUNCTIONS DECLARED BELOW:
+// ===========================================================================
+
+// function that clears old results from local storage
 function clearStorage(recordToClear) {
     localStorage.clear(recordToClear);
 }
