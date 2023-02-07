@@ -1,42 +1,39 @@
-.jumbotron{
-background-color: #5E3FA2;
-/*position: relative;*/
-/*justify-content: ; */
+.quiz-Maker-container {
+    background-color: #5E3FA2;
 
-/*display: flex;
-align-items: center;*/
-}
-.jumbotron h2{
-text-align: center;
 }
 
-.jumbotron p{
+.jumbotron {
+    background-color: transparent !important;
+}
+
+.jumbotron h2 {
+    text-align: center;
+}
+
+.jumbotron p {
     font-size: 16pt;
     border: black 2px;
     padding: 5px;
     text-align: center;
 }
 
-.container{
-height: 500px;
-}
-/*.container{
-width: 700px;
-margin-right: auto;
-margin-left: auto;
-}*/
-.row  {
-justify-content: center;
-column-gap: 80px;
-height: 80px;
+.container {
+    height: 500px;
 }
 
-.row button  {
+.row {
+    justify-content: center;
+    column-gap: 80px;
+    height: 80px;
+}
+
+.row button {
     border-radius: 10px;
     background-color: #5E3FA2;
     color: white;
-    }
-    
+}
+
 
 /******************************************
 /Media Query  - responsive
@@ -44,13 +41,13 @@ height: 80px;
 
 @media only screen and (max-width: 1000px) {
 
-    .contact-info{
-      flex-direction: column;
+    .contact-info {
+        flex-direction: column;
     }
-    .contact-card{
-    width: 100%;
-    max-width: 400px;
-    margin: 40px 0;
+
+    .contact-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 40px 0;
     }
-    }
-    
+}
