@@ -84,17 +84,12 @@ function getQuizQuestions(category, quantity) {
             translateQuestions(languageChosen, questionArrayStringified);
         }
     })
-     
     .catch(function(error){
         console.error(error);
-    })
-    .then(changePage());
+    });
+    //wait 4 seconds for the API calls to complete, then take the user to the results page
+    setTimeout(goToResultsPage, 4000);
 };
-
-//then take the user to the results page
-function changePage(){
-    window.location.href = "./results.html";
-  };
 
 
 // function that takes the quiz question generated from QuizAPI and passes it to the Translator API
@@ -149,7 +144,6 @@ function translateQuestions(language,text){
 
                 // write the full record to local storage
                 localStorage.setItem("questionsAndAnswersString", JSON.stringify(questionsAndAnswersArray));
-
             })
             .catch(err => console.error(err));
     }
@@ -163,7 +157,15 @@ function translateQuestions(language,text){
 // function that clears old results from local storage
 function clearStorage(recordToClear) {
     localStorage.clear(recordToClear);
-}
+};
+
+// function that takes user to the results page
+function goToResultsPage() {
+    window.location.href = "./results.html";
+};
+
+
+
 
 // TO DOS IN ORDER OF PRIORITY
 // =============================================================
