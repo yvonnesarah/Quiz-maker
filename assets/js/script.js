@@ -79,12 +79,17 @@ function getQuizQuestions(category, quantity) {
             translateQuestions(languageChosen, questionArrayStringified);
         }
     })
+     
     .catch(function(error){
         console.error(error);
     })
+    .then(changePage());
+};
 
-}
-
+//then take the user to the results page
+function changePage(){
+    window.location.href = "./results.html";
+  };
 
 
 // function that takes the quiz question generated from QuizAPI and passes it to the Translator API
@@ -140,10 +145,6 @@ function translateQuestions(language,text){
                 // write the full record to local storage
                 localStorage.setItem("questionsAndAnswersString", JSON.stringify(questionsAndAnswersArray));
 
-            })
-            // then take the user to the results page
-            .then(function(){
-                window.location.href = "./results.html";
             })
             .catch(err => console.error(err));
     }
