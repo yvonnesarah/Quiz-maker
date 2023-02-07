@@ -1,0 +1,23 @@
+.jumbotron {
+    background-color: red;
+    height: 200px;
+}
+
+.jumbotron h2 {
+    color: white;
+}
+
+.row {
+    justify-content:space-evenly;
+    height: 80px;
+}
+
+.row button {
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
