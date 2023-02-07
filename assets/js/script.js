@@ -84,7 +84,7 @@ function getQuizQuestions(category, quantity) {
             console.log(questionArrayStringified);
 
             // push the questionText and answerText variables to the translator API
-            translateQuestions(languageChosen, questionArrayStringified);
+            setTimeout(translateQuestions(languageChosen, questionArrayStringified),500);
         }
     })
     .catch(function(error){
