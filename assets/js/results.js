@@ -59,12 +59,14 @@ function displayResults(){
             
             // the inner loop runs through the array of answers to attach each option as a bullet on the card
             for (j = 1; j < (thisQuestion.length); j++) {
-                var optionsListItem = document.createElement("li");
-                optionsListItem.textContent = thisQuestion[j];
-                optionsOnCard.appendChild(optionsListItem);
+                if (thisQuestion[j]) { // the if statement igonres any blank options
+                    var optionsListItem = document.createElement("li");
+                    optionsListItem.textContent = thisQuestion[j];
+                    optionsOnCard.appendChild(optionsListItem);
+                }
             };
 
-            // then append the fully populated card to the user's view
+            // then create the fully populated card and append to the user's view
             resultCard.innerHTML = `<div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">${questionOnCard}</h4>
