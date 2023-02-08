@@ -95,8 +95,14 @@ function getQuizQuestions(category, quantity) {
             questionArrayStringified = questionArray.toString();
             console.log(questionArrayStringified);
 
-            // push the questionText and answerText variables to the translator API
-            setTimeout(translateQuestions(languageChosen, questionArrayStringified),500);
+            // Don't bother translating if the user selects english
+            if (languageChosen === "en"){
+              // if english, just save generated questions to local storage
+              saveResults(questionArray);
+            } else {
+              // if not english, push the questionText and answerText variables to the translator API
+              setTimeout(translateQuestions(languageChosen, questionArrayStringified),500);
+            }
         }
     })
     .catch(function(error){
@@ -110,10 +116,6 @@ function getQuizQuestions(category, quantity) {
 // function that takes the quiz question generated from QuizAPI and passes it to the Translator API
 function translateQuestions(language,text){
 
-    // Don't bother translating if the user selects english
-    if (language === "en"){
-        console.log("Language is english so i cant translate"); // change this to continue without running the translator API
-    } else {
         // if user selected any language other than english, push langaugaeChosen and questionText as arguments through the API
         const encodedParams = new URLSearchParams();
         encodedParams.append("source_language", "en");
@@ -145,7 +147,6 @@ function translateQuestions(language,text){
                 saveResults(newQuestionAndAnswersArray);
             })
             .catch(err => console.error(err));
-    }
 };
 
 
