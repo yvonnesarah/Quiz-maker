@@ -68,15 +68,61 @@
 /Media Query  - responsive
 /*******************************************/
 
-@media only screen and (max-width: 1000px) {
-
-    .contact-info {
-        flex-direction: column;
+@media only screen and (max-width: 1024px) {
+    .quiz-Maker-container {
+        background-color: #5E3FA2;
+    
     }
-
-    .contact-card {
-        width: 100%;
-        max-width: 400px;
-        margin: 40px 0;
+    
+    .jumbotron {
+        background-color: transparent !important;
+    }
+    
+    .jumbotron h2 {
+        color: white;
+        text-align: center;
+    }
+    
+    .jumbotron p {
+        color: white;
+        font-size: 16pt;
+        border: black 2px;
+        padding: 5px;
+        text-align: center;
+    }
+    /*
+    .container {
+        height: 500px;
+    }
+    */
+    .container h3 {
+        color: black;
+    }
+    /*
+    .row {
+        justify-content: center;
+        column-gap: 80px;
+        height: 80px;
+    }
+    */
+    #Category #Category {
+        color: white;
+        background-color: #5E3FA2;
+    }
+    
+    #Language #Language {
+        color: white;
+        background-color: #5E3FA2;
+    }
+    
+    #Number_of_Questions #Number_of_Questions {
+        color: white;
+        background-color: #5E3FA2;
+    }
+    
+    .row button {
+        border-radius: 10px;
+        background-color: #5E3FA2;
+        color: white;
     }
 }
