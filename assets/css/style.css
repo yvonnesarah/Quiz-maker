@@ -8,12 +8,12 @@
 }
 
 .jumbotron h2 {
-    color:white;
+    color: white;
     text-align: center;
 }
 
 .jumbotron p {
-    color:white;
+    color: white;
     font-size: 16pt;
     border: black 2px;
     padding: 5px;
@@ -23,13 +23,30 @@
 .container {
     height: 500px;
 }
+
 .container h3 {
-    color: white;
+    color: black;
 }
+
 .row {
     justify-content: center;
     column-gap: 80px;
     height: 80px;
+}
+
+#Category #Category {
+    color: white;
+    background-color: #5E3FA2;
+}
+
+#Language #Language {
+    color: white;
+    background-color: #5E3FA2;
+}
+
+#Number_of_Questions #Number_of_Questions {
+    color: white;
+    background-color: #5E3FA2;
 }
 
 .row button {
