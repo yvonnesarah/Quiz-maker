@@ -35,8 +35,10 @@ generateQuestionsButton.addEventListener("click", function(event) {
     Loader.open();
 
     //clear previous results from local storage first
-    var questionsAndAnswersString = localStorage.getItem("questionsAndAnswersString");
-    clearStorage(questionsAndAnswersString);
+    var questionsToClear = localStorage.getItem("questionsAndAnswersString");
+    clearStorage(questionsToClear);
+    var optionsToClear = localStorage.getItem("chosenOptionsString");
+    clearStorage(optionsToClear);
     
     // Collecting selected items from multiple dropdown lists 
     var allDropdowns = document.getElementsByTagName('SELECT');
@@ -51,7 +53,7 @@ generateQuestionsButton.addEventListener("click", function(event) {
         chosenOptions.push(temporaryHolder);
     }
 
-    chosenOptionsString = JSON.stringify(chosenOptions); // produces a JSON holding all the user's chosen options
+    var chosenOptionsString = JSON.stringify(chosenOptions); // produces a JSON holding all the user's chosen options
     
     // write the chosen options to local storage so it's available for the results page
     localStorage.setItem("chosenOptionsString", chosenOptionsString);
@@ -134,29 +136,13 @@ function translateQuestions(language,text){
                 translatedQuestion = data;
                 console.log(translatedQuestion);
             })
-            // then pick out the part of the result you need and 
+            // then pick out the part of the result you need and create an array
             .then(function(){
                 var newQuestionAndAnswers = translatedQuestion.data.translatedText;
                 newQuestionAndAnswersArray = newQuestionAndAnswers.split(",");
                 console.log(newQuestionAndAnswersArray);
-            })
-            // then save everything to local storage
-            .then(function(){
-                // declaring a variable to hold a string of all previous questions
-                var oldQuestions = localStorage.getItem("questionsAndAnswersString");
-
-                // if there were no previous questions, create a new array, but if there are, capture them into an array
-                if (oldQuestions === null) {
-                    questionsAndAnswersArray = [];
-                } else {
-                    questionsAndAnswersArray = JSON.parse(oldQuestions);
-                };
-
-                // add this new questions and answers set to the existing array from previous questions
-                questionsAndAnswersArray.push(newQuestionAndAnswersArray);
-
-                // write the full record to local storage
-                localStorage.setItem("questionsAndAnswersString", JSON.stringify(questionsAndAnswersArray));
+                // then save generated questions to local storage
+                saveResults(newQuestionAndAnswersArray);
             })
             .catch(err => console.error(err));
     }
@@ -176,6 +162,25 @@ function clearStorage(recordToClear) {
 // function that takes user to the results page once it's ready
 function goToResultsPage() {
     window.location.href = "./results.html";
+};
+
+//function that saves generated questions to local storage
+function saveResults(array) {
+    // declaring a variable to hold a string of all previous questions
+    var oldQuestions = localStorage.getItem("questionsAndAnswersString");
+
+    // if there were no previous questions, create a new array, but if there are, capture them into an array
+    if (oldQuestions === null) {
+        questionsAndAnswersArray = [];
+    } else {
+        questionsAndAnswersArray = JSON.parse(oldQuestions);
+    };
+
+    // add this new questions and answers set to the existing array from previous questions
+    questionsAndAnswersArray.push(array);
+
+    // write the full record to local storage
+    localStorage.setItem("questionsAndAnswersString", JSON.stringify(questionsAndAnswersArray));
 };
 
 
