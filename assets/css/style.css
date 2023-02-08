@@ -55,7 +55,15 @@
     color: white;
 }
 
+/******************************************
+ Modal
 
+.modal-footer button .btn btn-default{
+   
+    border: radius 3px #5E3FA2;
+    text-align:center
+}
+/*******************************************/
 /******************************************
 /Media Query  - responsive
 /*******************************************/
