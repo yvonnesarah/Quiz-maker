@@ -51,18 +51,41 @@ function displayResults(){
         // build the results view by looping through the array of results from local storage
         for (i = 0; i < QandAArray.length; i++) {
 
-            // the outer loop just makes the question text display to the user
-            var questionInResults = document.createElement("h4");
-            questionInResults.textContent = QandAArray[i][0];
-            resultsContainer.appendChild(questionInResults);
-            thisQuestion = QandAArray[i];
-
-            //the inner loop runs through the array of answers to display each option to the user
+            // the outer loop places each question in the card header and creates a holder for the list of options
+            var resultCard = document.createElement("div");
+            var thisQuestion = QandAArray[i];
+            var questionOnCard = QandAArray[i][0];
+            var optionsOnCard = document.createElement("ul");
+            
+            // the inner loop runs through the array of answers to attach each option as a bullet on the card
             for (j = 1; j < (thisQuestion.length); j++) {
-                var optionInResults = document.createElement("li");
-                optionInResults.textContent = thisQuestion[j];
-                resultsContainer.appendChild(optionInResults);
-            }
+                var optionsListItem = document.createElement("li");
+                optionsListItem.textContent = thisQuestion[j];
+                optionsOnCard.appendChild(optionsListItem);
+            };
+
+            // then append the fully populated card to the user's view
+            resultCard.innerHTML = `<div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">${questionOnCard}</h4>
+                                            <p class="card-text">${optionsOnCard.outerHTML}</p>
+                                        </div>
+                                    </div>`;
+            resultsContainer.appendChild(resultCard);
+
+
+            // // the outer loop just makes the question text display to the user
+            // var questionInResults = document.createElement("h4");
+            // questionInResults.textContent = QandAArray[i][0];
+            // resultsContainer.appendChild(questionInResults);
+            // var thisQuestion = QandAArray[i];
+
+            // //the inner loop runs through the array of answers to display each option to the user
+            // for (j = 1; j < (thisQuestion.length); j++) {
+            //     var optionInResults = document.createElement("li");
+            //     optionInResults.textContent = thisQuestion[j];
+            //     resultsContainer.appendChild(optionInResults);
+            // }
 
         };
     };

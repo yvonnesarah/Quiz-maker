@@ -258,6 +258,8 @@ var Loader = {
 // JS - if the user selects english, make it only skip the translator API, but do everything else
 // In Rubric: Make the Readme better
 // In Rubric: Powerpoint presentation
+// Switch our private API keys for new public ones
+// Practice presentation
 
 // FUTURE CONSIDERATIONS
 // =============================================================
