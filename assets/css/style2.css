@@ -25,5 +25,5 @@ h1{
 .card{
     height: 200px;
     width: 800px;
-    box-shadow: 10px 10px 10px 10px violet;
+    box-shadow: 5px 5px 5px 5px violet;
 }
