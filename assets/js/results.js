@@ -27,9 +27,9 @@ displayResults();
 
 // declaring function that displays filters
 function displayFilters(){
-        categoryChosenContainer.textContent = chosenOpsArray[0][0];
-        languageChosenContainer.textContent = chosenOpsArray[1][0];
-        quantityChosenContainer.textContent = chosenOpsArray[2][0];
+        categoryChosenContainer.textContent = `✅ Category: ${chosenOpsArray[0][0]}`;
+        languageChosenContainer.textContent = `✅ Language: ${chosenOpsArray[1][0]}`;
+        quantityChosenContainer.textContent = `✅ Quantity: ${chosenOpsArray[2][0]}`;
 };
 
 

@@ -251,9 +251,11 @@ var Loader = {
 
 // TO DOS IN ORDER OF PRIORITY
 // =============================================================
-// fix up the CSS so it all looks great! - intro modal, logo, filter box, results cards, duplicated results heading, consistent theme
-// CSS - make it responsive on bth pages
-// if the user selects english, make it only skip the translator API, but do everything else
+// Fix up CSS so it looks great! - intro modal, logo, filter box, results cards with shadows, 
+// More CSS: duplicated results heading, consistent theme, 2 colour pages, better buttons
+// More CSS - make it responsive on both pages
+// JS - populate the results with bootstrap cards
+// JS - if the user selects english, make it only skip the translator API, but do everything else
 // In Rubric: Make the Readme better
 // In Rubric: Powerpoint presentation
 
@@ -264,3 +266,4 @@ var Loader = {
 // future: more topics, higher quantity of arrays
 // future: make the "generate questions" button change plurality if the user is about to select more than one question
 // future: put buttons to automatically copy the questions generated to the users clipboard
+// future: if statement to ignore all blank multiple-choice options that come with questions
