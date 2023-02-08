@@ -12,20 +12,21 @@ var translatedQuestion;
 var questionsAndAnswersArray;
 var newQuestionAndAnswersArray;
 
-// trigger modal to show only once on initial page
-$(document).ready(function() {
-    if(sessionStorage.getItem('#Modal')!=='true')
-	{
-		$('#Modal').modal('show');
-		sessionStorage.setItem('#Modal',true);
-	}
-});
-
 
 
 
 // MAIN 'QUESTION GENERATOR' LOGIC STARTS HERE
 // ===========================================================================
+
+// Trigger for 'Welcome to Quiz Maker' modal to show only when homepage is loaded for the first time
+$(document).ready(function() {
+  if(sessionStorage.getItem('#Modal')!=='true')
+{
+  $('#Modal').modal('show');
+  sessionStorage.setItem('#Modal',true);
+}
+});
+
 
 // When user clicks the 'Generate Questions' button, call the first API
 generateQuestionsButton.addEventListener("click", function(event) {
@@ -167,7 +168,7 @@ function clearStorage(recordToClear) {
     localStorage.clear(recordToClear);
 };
 
-// function that takes user to the results page
+// function that takes user to the results page once it's ready
 function goToResultsPage() {
     window.location.href = "./results.html";
 };
@@ -248,7 +249,6 @@ var Loader = {
 // fix up the CSS so it all looks great!
 // CSS - make it responsive
 // Fix timeout isue (async/await)
-// make the copy buttons work?
 // populate the filter container on the results page with whateever the user selected
 // if the user selects english, make it only skip the translator API, but do everything else
 // clean up code, make comments more relevant and structured
@@ -267,3 +267,4 @@ var Loader = {
 // future: look at the possibility of handling a question with commas
 // future: more topics, higher quantity of arrays
 // future: make the "generate questions" button change plurality if the user is about to select more than one question
+// future: put buttons to automatically copy the questions generated to the users clipboard
