@@ -50,8 +50,13 @@ generateQuestionsButton.addEventListener("click", function(event) {
         }
         chosenOptions.push(temporaryHolder);
     }
-    console.log(JSON.stringify(chosenOptions)); 
-    // produces a JSON holding all the user's chosen options
+
+    chosenOptionsString = JSON.stringify(chosenOptions); // produces a JSON holding all the user's chosen options
+    
+    // write the chosen options to local storage so it's available for the results page
+    localStorage.setItem("chosenOptionsString", chosenOptionsString);
+    console.log(chosenOptionsString); 
+    
 
     categoryChosen = chosenOptions[0][0];
     languageChosen = chosenOptions[1][0];

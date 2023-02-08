@@ -1,25 +1,39 @@
 // DECLARING VARIABLES & DOM ELEMENTS FOR USE IN THE GLOBAL SCOPE
 // ===========================================================================
 
-// fetch scores from local storage
+// fetch stuff from local storage
 var QandAString = localStorage.getItem("questionsAndAnswersString");
+var chosenOpsString = localStorage.getItem("chosenOptionsString");
 
-// convert the string of scores gotten from local storage into an array
+// convert the strings gotten from local storage into  arrays
 var QandAArray = JSON.parse(QandAString);
+var chosenOpsArray = JSON.parse(chosenOpsString);
 
-// determine where results will be built in user's view
+// determine where filter and results will be built in user's view
 var resultsContainer = document.querySelector("#results");
+var categoryChosenContainer = document.querySelector("#categoryChosen");
+var languageChosenContainer = document.querySelector("#languageChosen");
+var quantityChosenContainer = document.querySelector("#quantityChosen");
 
 
 
 // MAIN RESULTS PAGE LOGIC (FUNCTIONS & MORE) STARTS HERE
 // ===========================================================================
 
-// function to display results is constantly run without any trigger
+// function to display filter and results is constantly run without any trigger
+displayFilters();
 displayResults();
 
 
-// declaring function that updates the users view with results constantly
+// declaring function that displays filters
+function displayFilters(){
+        categoryChosenContainer.textContent = chosenOpsArray[0][0];
+        languageChosenContainer.textContent = chosenOpsArray[1][0];
+        quantityChosenContainer.textContent = chosenOpsArray[2][0];
+};
+
+
+// declaring function that displays results
 function displayResults(){
 
     // if there were no previous results, let the user know, but if there are, build the results into view
