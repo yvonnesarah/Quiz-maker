@@ -1,5 +1,5 @@
 .jumbotron {
-    background-color: red;
+    background-color: #5E3FA2;
     height: 200px;
 }
 
@@ -14,10 +14,16 @@
 
 .row button {
     border-radius: 10px;
-    background-color: blue;
+    background-color: #5E3FA2;
     color: white;
 }
 
 h1{
     text-align: center;
+}
+
+.card{
+    height: 200px;
+    width: 800px;
+    box-shadow: 10px 10px 10px 10px violet;
 }
