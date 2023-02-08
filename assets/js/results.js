@@ -28,7 +28,11 @@ displayResults();
 // declaring function that displays filters
 function displayFilters(){
         categoryChosenContainer.textContent = `✅ Category: ${chosenOpsArray[0][0]}`;
-        languageChosenContainer.textContent = `✅ Language: ${chosenOpsArray[1][0]}`;
+        if (chosenOpsArray[1][0] === "en") {languageToDisplay = "English"}
+        else if (chosenOpsArray[1][0] === "fr") {languageToDisplay = "French"}
+        else if (chosenOpsArray[1][0] === "es") {languageToDisplay = "Spanish"}
+        else if (chosenOpsArray[1][0] === "de") {languageToDisplay = "German"};
+        languageChosenContainer.textContent = `✅ Language: ${languageToDisplay}`;
         quantityChosenContainer.textContent = `✅ Quantity: ${chosenOpsArray[2][0]}`;
 };
 
