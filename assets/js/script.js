@@ -251,20 +251,11 @@ var Loader = {
 
 // TO DOS IN ORDER OF PRIORITY
 // =============================================================
-// fix up the CSS so it all looks great!
-// CSS - make it responsive
-// Fix timeout isue (async/await)
-// populate the filter container on the results page with whateever the user selected
+// fix up the CSS so it all looks great! - intro modal, logo, filter box, results cards, duplicated results heading, consistent theme
+// CSS - make it responsive on bth pages
 // if the user selects english, make it only skip the translator API, but do everything else
-// clean up code, make comments more relevant and structured
-// In Rubric: Better user experience (introducde a loading wheel to wait for questions to bee generated)
-// In Rubric: Better user expoerience (add an intro modal)
-// In Rubric: Deploy to github pages
-// In Rubric: Give repo a unique name
 // In Rubric: Make the Readme better
-// In Rubric: clean up code, make comments more relevant and structured
 // In Rubric: Powerpoint presentation
-// In Rubric: get Martin more pushes
 
 // FUTURE CONSIDERATIONS
 // =============================================================
