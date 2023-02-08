@@ -22,14 +22,18 @@ $(document).ready(function() {
 });
 
 
+
+
 // MAIN 'QUESTION GENERATOR' LOGIC STARTS HERE
 // ===========================================================================
 
 // When user clicks the 'Generate Questions' button, call the first API
 generateQuestionsButton.addEventListener("click", function(event) {
 
+    // Start the page loader
+    Loader.open();
+
     //clear previous results from local storage first
-    // fetch scores from local storage
     var questionsAndAnswersString = localStorage.getItem("questionsAndAnswersString");
     clearStorage(questionsAndAnswersString);
     
@@ -154,6 +158,7 @@ function translateQuestions(language,text){
 
 
 
+
 // OTHER FUNCTIONS DECLARED BELOW:
 // ===========================================================================
 
@@ -166,6 +171,8 @@ function clearStorage(recordToClear) {
 function goToResultsPage() {
     window.location.href = "./results.html";
 };
+
+
 
 
 // SCRIPT FOR SPINNING LOADER (CREATED BY MATHEUS2212, SOURCED FROM www.cssscript.com/animated-svg-loading-spinner/)
