@@ -26,19 +26,19 @@ displayResults();
 
 
 // declaring function that displays filters
-function displayFilters(){
-        categoryChosenContainer.textContent = `✅ Category: ${chosenOpsArray[0][0]}`;
-        if (chosenOpsArray[1][0] === "en") {languageToDisplay = "English"}
-        else if (chosenOpsArray[1][0] === "fr") {languageToDisplay = "French"}
-        else if (chosenOpsArray[1][0] === "es") {languageToDisplay = "Spanish"}
-        else if (chosenOpsArray[1][0] === "de") {languageToDisplay = "German"};
-        languageChosenContainer.textContent = `✅ Language: ${languageToDisplay}`;
-        quantityChosenContainer.textContent = `✅ Quantity: ${chosenOpsArray[2][0]}`;
+function displayFilters() {
+    categoryChosenContainer.textContent = `✅ Category: ${chosenOpsArray[0][0]}`;
+    if (chosenOpsArray[1][0] === "en") { languageToDisplay = "English" }
+    else if (chosenOpsArray[1][0] === "fr") { languageToDisplay = "French" }
+    else if (chosenOpsArray[1][0] === "es") { languageToDisplay = "Spanish" }
+    else if (chosenOpsArray[1][0] === "de") { languageToDisplay = "German" };
+    languageChosenContainer.textContent = `✅ Language: ${languageToDisplay}`;
+    quantityChosenContainer.textContent = `✅ Quantity: ${chosenOpsArray[2][0]}`;
 };
 
 
 // declaring function that displays results
-function displayResults(){
+function displayResults() {
 
     // if there were no previous results, let the user know, but if there are, build the results into view
     if (QandAArray === null) {
@@ -56,7 +56,7 @@ function displayResults(){
             var thisQuestion = QandAArray[i];
             var questionOnCard = QandAArray[i][0];
             var optionsOnCard = document.createElement("ul");
-            
+
             // the inner loop runs through the array of answers to attach each option as a bullet on the card
             for (j = 1; j < (thisQuestion.length); j++) {
                 if (thisQuestion[j]) { // the if statement igonres any blank options
