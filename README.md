@@ -32,24 +32,30 @@ It allows the user to generate quiz questions on any selected topic and returns 
 
 Here are some screenshots of the deployed application in use.
 
-### Home page where user selects options
+### Starts off with a welcome modal on the home page
+<img src="./assets/README_images/.png" width="600" title="modal" alt="modal">
+
+### Home page where user selects options; Category, Language & Quantity
+<img src="./assets/README_images/.png" width="600" title="homepage" alt="homepage">
 
 ### Results page where user sees questions generated
+<img src="./assets/README_images/.png" width="600" title="results page" alt="results page">
 
 ### Both pages built to be mobile responsive
+<img src="./assets/README_images/.png" width="600" title="responsive homepage" alt="responsive homepage"><img src="./assets/README_images/.png" width="600" title="responsive results page" alt="responsive results page">
 
 ## Technologies used
 
 ### Code
-<img src="./assets/README_images/html_css_js.png" width="100" title="HTML CSS JS" alt="HTML CSS JS"> <img src="./assets/README_images/jquery.png" width="100" title="jQuery" alt="jQuery"> <img src="./assets/README_images/bootstrap.jpg" width="120" title="boostrap4" alt="boostrap4">
+<img src="./assets/README_images/html_css_js.png" width="200" title="HTML CSS JS" alt="HTML CSS JS"> <img src="./assets/README_images/jquery.png" width="160" title="jQuery" alt="jQuery"> <img src="./assets/README_images/bootstrap.jpg" width="200" title="boostrap4" alt="boostrap4">
 
 ### APIs
 [Quiz API](https://quizapi.io/) & [Text Translator API](https://rapidapi.com/dickyagustin/api/text-translator2/)
 
-<img src="./assets/README_images/quiz.png" width="160" title="User Story" alt="User Story"> <img src="./assets/README_images/translator.png" width="100" title="User Story" alt="User Story"> 
+<img src="./assets/README_images/quiz.png" width="160" title="quiz API" alt="quiz API"> <img src="./assets/README_images/translator.png" width="100" title="translator API" alt="translator API"> 
 
 ### Others
-<img src="./assets/README_images/namecheap.jpg" width="100" title="User Story" alt="User Story"> <img src="./assets/README_images/fonts.png" width="300" title="User Story" alt="User Story"> 
+<img src="./assets/README_images/namecheap.jpg" width="100" title="namecheap" alt="namecheap"> <img src="./assets/README_images/fonts.png" width="300" title="google_fonts" alt="google_fonts"> 
 
 ## Future considerations
 
@@ -67,6 +73,7 @@ Features and improvements to maybe add someday.
 ## Team
 
 <img src="./assets/README_images/team.png" width="600" title="team" alt="team">
+
 ### Github profiles: [Yvonne (yvonnesarah)](https://github.com/yvonnesarah), [Martin (martinjnamara)](https://github.com/martinjnamara) & [Ugo (Ugopreneur)](https://github.com/Ugopreneur)
 
 ## Credits
