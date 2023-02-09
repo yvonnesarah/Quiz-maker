@@ -252,24 +252,3 @@ var Loader = {
     module.exports = Loader;
   }
   /* Loader script ends*/
-  
-
-
-// TO DOS IN ORDER OF PRIORITY
-// =============================================================
-// Fix up CSS so it looks great! - intro modal, logo, filter box, results cards with shadows, 
-// More CSS: duplicated results heading, consistent theme, 2 colour pages, better buttons
-// More CSS - make it responsive on both pages
-// JS - if the user selects english, make it only skip the translator API, but do everything else
-// In Rubric: Make the Readme better
-// In Rubric: Powerpoint presentation
-// Switch our private API keys for new public ones
-// Practice presentation
-
-// FUTURE CONSIDERATIONS
-// =============================================================
-// future: figure out how to indicate which is the correct answer among the options
-// future: look at the possibility of handling a question with commas
-// future: more topics, higher quantity of arrays
-// future: make the "generate questions" button change plurality if the user is about to select more than one question
-// future: put buttons to automatically copy the questions generated to the users clipboard
