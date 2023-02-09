@@ -29,5 +29,35 @@
 }
 
 .card .card-title {
-font-weight: bold;
+    font-weight: bold;
+}
+
+/******************************************
+/Media Query  - responsive
+/*******************************************/
+
+@media only screen and (max-width: 750px) {
+    .jumbotron {
+        background-color: #5E3FA2;
+        height: 200px;
+    }
+
+    .jumbotron h2 {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .row>div {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+    }
+
+
 }
