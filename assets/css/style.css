@@ -70,17 +70,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
-
-/******************************************
- Modal
-
-.modal-footer button .btn btn-default{
-   
-    border: radius 3px #5E3FA2;
-    text-align:center
-}
-/*******************************************/
 /******************************************
 /Media Query  - responsive
 /*******************************************/
@@ -110,23 +99,12 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    /*
-    .container {
-        height: 500px;
-    }
-    */
+ 
     .container h3 {
         color: black;
         font-family: 'Roboto', sans-serif;
     }
 
-    /*
-    .row {
-        justify-content: center;
-        column-gap: 80px;
-        height: 80px;
-    }
-    */
     #Category #Category {
         color: white;
         background-color: #5E3FA2;
