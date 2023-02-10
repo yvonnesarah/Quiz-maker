@@ -49,6 +49,9 @@ Here are some screenshots of the deployed application in use.
 ### Code
 <img src="./assets/README_images/html_css_js.png" width="200" title="HTML CSS JS" alt="HTML CSS JS"> <img src="./assets/README_images/jquery.png" width="160" title="jQuery" alt="jQuery"> <img src="./assets/README_images/bootstrap.jpg" width="200" title="boostrap4" alt="boostrap4">
 
+### Skills applied
+Reading and writing to local storage, Media queries for responsiveness, Manipulating bootstrap componenets (jumbotron, cards, modal), Manipulating HTML DOM elements, Managing asynchronous functions with promises and setTimeouts, Iterating over arrays with for loops, working with different variable scopes, nested loops and nested functions, complex if/else statements, handling objects with dot notation etc.
+
 ### APIs
 [Quiz API](https://quizapi.io/) & [Text Translator API](https://rapidapi.com/dickyagustin/api/text-translator2/)
 
