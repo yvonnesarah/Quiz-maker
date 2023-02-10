@@ -6,6 +6,7 @@
 
 - [Description](#description)
 - [Screenshots](#screenshots)
+- [Project Link](#project-link)
 - [Technologies used](#technologies-used)
 - [Future considerations](#future-considerations)
 - [Team](#team)
@@ -43,6 +44,11 @@ Here are some screenshots of the deployed application in use.
 
 ### Pages built to be mobile responsive
 <img src="./assets/README_images/responsive1_page-0001.jpg" width="200" title="responsive modal" alt="responsive modal">   <img src="./assets/README_images/resposive2_page-0001.jpg" width="200" title="responsive results page" alt="responsive results page">   <img src="./assets/README_images/responsive3_page-0001.jpg" width="200" title="responsive results page" alt="responsive results page">
+
+## Project Link
+
+Application can be viewed here: 
+[Live](https://yvonnesarah.github.io/Quiz-maker/)
 
 ## Technologies used
 
