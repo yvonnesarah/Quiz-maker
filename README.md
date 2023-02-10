@@ -33,16 +33,16 @@ It allows the user to generate quiz questions on any selected topic and returns 
 Here are some screenshots of the deployed application in use.
 
 ### Starts off with a welcome modal on the home page
-<img src="./assets/README_images/.png" width="600" title="modal" alt="modal">
+<img src="./assets/README_images/modal.png" width="300" title="modal" alt="modal">
 
 ### Home page where user selects options; Category, Language & Quantity
-<img src="./assets/README_images/.png" width="600" title="homepage" alt="homepage">
+<img src="./assets/README_images/index.png" width="600" title="homepage" alt="homepage">
 
 ### Results page where user sees questions generated
-<img src="./assets/README_images/.png" width="600" title="results page" alt="results page">
+<img src="./assets/README_images/results-spanish.png" width="600" title="results page" alt="results page">
 
-### Both pages built to be mobile responsive
-<img src="./assets/README_images/.png" width="600" title="responsive homepage" alt="responsive homepage"><img src="./assets/README_images/.png" width="600" title="responsive results page" alt="responsive results page">
+### Pages built to be mobile responsive
+<img src="./assets/README_images/responsive1_page-0001.jpg" width="200" title="responsive modal" alt="responsive modal">   <img src="./assets/README_images/resposive2_page-0001.jpg" width="200" title="responsive results page" alt="responsive results page">   <img src="./assets/README_images/responsive3_page-0001.jpg" width="200" title="responsive results page" alt="responsive results page">
 
 ## Technologies used
 
@@ -55,7 +55,7 @@ Here are some screenshots of the deployed application in use.
 <img src="./assets/README_images/quiz.png" width="160" title="quiz API" alt="quiz API"> <img src="./assets/README_images/translator.png" width="100" title="translator API" alt="translator API"> 
 
 ### Others
-<img src="./assets/README_images/namecheap.jpg" width="100" title="namecheap" alt="namecheap"> <img src="./assets/README_images/fonts.png" width="300" title="google_fonts" alt="google_fonts"> 
+<img src="./assets/README_images/namecheap.jpg" width="100" title="namecheap" alt="namecheap">    <img src="./assets/README_images/fonts.png" width="300" title="google_fonts" alt="google_fonts"> 
 
 ## Future considerations
 
